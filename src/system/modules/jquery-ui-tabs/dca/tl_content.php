@@ -70,7 +70,8 @@ array_insert($GLOBALS['TL_DCA']['tl_content']['fields'], 0, array(
 		{
 			if ($varValue == '') {
 				$arrHeadline = deserialize($dc->activeRecord->juiTabHeadline);
-				$varValue = standardize(String::restoreBasicEntities($arrHeadline['value']));
+				$varValue = standardize(String::standardize($arrHeadline['value']));
+				$varValue = ltrim($varValue, 'id-');
 			}
 				
 			return $varValue;
