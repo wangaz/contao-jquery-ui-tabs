@@ -1,0 +1,33 @@
+{
+	"name":"wangaz/contao-jquery-ui-tabs",
+	"description":"jQuery UI Tabs for Contao Open Source CMS",
+	"keywords":["contao", "jquery", "tabs"],
+	"type":"contao-module",
+	"homepage":"https://wangaz.com",
+	"license":"CC-BY-SA 4.0",
+	"authors":[
+		{
+			"name":"wangaz.",
+			"homepage":"https://wangaz.com"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/wangaz/contao-jquery-ui-tabs/issues",
+		"source":"https://github.com/wangaz/contao-jquery-ui-tabs"
+	},
+	"require":{
+		"php":">=5.3",
+		"contao/core":"~3.3"
+	},
+	"autoload": {
+		"classmap": ["src"]
+	},
+	"extra":{
+		"contao": {
+			"symlinks":{
+				"src/assets/jquery-ui-tabs":"assets/jquery-ui-tabs",
+				"src/system/modules/jquery-ui-tabs":"system/modules/jquery-ui-tabs"
+			}
+		}
+	}
+}

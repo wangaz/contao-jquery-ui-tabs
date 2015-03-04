@@ -1,0 +1,10 @@
+
+<?php 
+	$GLOBALS['TL_JAVASCRIPT'][] = TL_ASSETS_URL . 'assets/jquery-ui-tabs/jquery-ui-tabs.js|static'; 
+	$GLOBALS['TL_JAVASCRIPT'][] = TL_ASSETS_URL . 'assets/jquery-ui-tabs/core.js|static'; 
+?>
+<script>
+	(function($) {
+		$('section.ce_tabs').tabs();
+	})(jQuery);
+</script>
