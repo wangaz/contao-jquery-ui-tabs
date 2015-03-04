@@ -37,15 +37,19 @@
 			var id = eventData.newPanel.attr('id'),
 				hash = window.location.hash.replace('#', '');
 			
-			if (hash != id)
+			if (hash != id) 
+			{
 				history.pushState(null, null, window.location.pathname + '#' + id);
+			}
 		},
 		
 		toggle: function(hash) {
 			var index = this._getIndex(hash);
 			
 			if (index >= 0)
+			{
 				this.option('active', index);
+			}
 		},
 	});
 	

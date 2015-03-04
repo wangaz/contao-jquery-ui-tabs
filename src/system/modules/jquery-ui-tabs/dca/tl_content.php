@@ -65,7 +65,7 @@ array_insert($GLOBALS['TL_DCA']['tl_content']['fields'], 0, array(
 		'label'			=> &$GLOBALS['TL_LANG']['tl_content']['juiTabAlias'],
 		'exclude'		=> true,
 		'inputType'		=> 'text',
-		'eval'			=> array('rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'),
+		'eval'			=> array('rgxp' => 'alias', 'maxlength' => 128, 'tl_class' => 'w50'),
 		'save_callback'	=> array(function($varValue, DataContainer $dc) 
 		{
 			if ($varValue == '') {
