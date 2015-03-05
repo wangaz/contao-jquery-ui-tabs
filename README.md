@@ -1,6 +1,12 @@
 # jQuery UI Tabs for Contao Open Source CMS
 
-This content element makes the [jQuery UI Tabs](https://github.com/jquery/jquery-ui) in [Contao Open Source CMS](https://contao.org) available. 
+This content element makes the extended [jQuery UI Tabs](https://github.com/jquery/jquery-ui) in [Contao Open Source CMS](https://contao.org) available. 
+
+## Extensions
+
+- Hash is set accordingly to the currently opened tab.
+- Adds clicks on tab to browser history.
+- Tabs can be opened from every link on the page by referencing the alias (<a href="#alias">).
 
 ## Demo
 
