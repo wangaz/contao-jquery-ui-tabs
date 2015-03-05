@@ -6,7 +6,7 @@ This content element makes the extended [jQuery UI Tabs](https://github.com/jque
 
 - Hash is set accordingly to the currently opened tab.
 - Adds clicks on tab to browser history.
-- Tabs can be opened from every link on the page by referencing the alias (`<a href="#alias">`).
+- Tabs can be opened from every link on the page by referencing the alias (`<a href="...#alias">`).
 
 ## Demo
 
