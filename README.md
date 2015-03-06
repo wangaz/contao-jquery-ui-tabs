@@ -10,7 +10,7 @@ This content element makes the extended [jQuery UI Tabs](https://github.com/jque
 
 ## Demo
 
-On jQuery's page: http://jqueryui.com/tabs/
+https://europawochelauf.de/strecken/brueckenlauf.html
 
 ##License
 
