@@ -56,6 +56,12 @@
 	$(window).on('hashchange', function() {
 		var hash = window.location.hash.replace('#', '');
 		
+		if (hash) {
+			setTimeout(function() {
+				window.scrollTo(0, 0);
+			}, 1);
+		}
+		
 		$('section.ce_tabs').tabs('toggle', hash);
 	});
 })(jQuery);
