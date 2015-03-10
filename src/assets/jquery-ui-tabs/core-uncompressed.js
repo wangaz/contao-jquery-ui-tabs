@@ -53,14 +53,16 @@
 		},
 	});
 	
-	$(window).on('hashchange', function() {
-		var hash = window.location.hash.replace('#', '');
-		
-		if (hash) {
+	$(document).ready(function() {
+		if (window.location.hash) {
 			setTimeout(function() {
 				window.scrollTo(0, 0);
 			}, 1);
 		}
+	});
+	
+	$(window).on('hashchange', function() {
+		var hash = window.location.hash.replace('#', '');
 		
 		$('section.ce_tabs').tabs('toggle', hash);
 	});
