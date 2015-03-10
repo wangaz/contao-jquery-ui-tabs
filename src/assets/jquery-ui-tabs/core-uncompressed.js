@@ -54,7 +54,9 @@
 	});
 	
 	$(document).ready(function() {
-		if (window.location.hash) {
+		var hash = window.location.hash.replace('#', '');
+		
+		if (hash && $('section#' + hash + '.ce_tabs').length) {
 			setTimeout(function() {
 				window.scrollTo(0, 0);
 			}, 1);
