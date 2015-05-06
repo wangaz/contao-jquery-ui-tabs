@@ -44,7 +44,14 @@
 		},
 		
 		toggle: function(hash) {
-			var index = this._getIndex(hash);
+			var index;
+			
+			// open first tab on empty hash
+			if (hash == '') {
+				index = 0;
+			} else {
+				index = this._getIndex(hash);
+			}
 			
 			if (index >= 0)
 			{
