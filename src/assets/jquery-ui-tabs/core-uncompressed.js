@@ -37,7 +37,7 @@
 			var id = eventData.newPanel.attr('id'),
 				hash = window.location.hash.replace('#', '');
 			
-			if ((hash || index != 0) && hash != id) 
+			if (hash != id && (index != 0 || hash != '')) 
 			{
 				history.pushState(null, null, window.location.pathname + '#' + id);
 			}
