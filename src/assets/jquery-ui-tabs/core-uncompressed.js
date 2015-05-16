@@ -7,16 +7,20 @@
  * @license http://creativecommons.org/licenses/by-sa/4.0/ CC BY-SA 4.0
  */
  
-(function($) {
-	$.widget('ui.tabs', $.ui.tabs, {
-		_create: function() {
+(function($) 
+{
+	$.widget('ui.tabs', $.ui.tabs, 
+	{
+		_create: function() 
+		{
 			// hide headlines
 			this.element.find('.headline').addClass('invisible');
 			
 			// build navigation
 			var nav = this.element.children('ul.nav');
 			
-			this.element.children('div.panel').each(function() {
+			this.element.children('div.panel').each(function() 
+			{
 				var that = $(this);
 				
 				var li = $('<li></li>').appendTo(nav);
@@ -31,25 +35,32 @@
 			this._super();
 		},
 		
-		_toggle: function(index, eventData) {
-			this._super(index, eventData);
+		_toggle: function(event, eventData) 
+		{
+			this._super(event, eventData);
 			
 			var id = eventData.newPanel.attr('id'),
-				hash = window.location.hash.replace('#', '');
-			
-			if (hash != id && (index != 0 || hash != '')) 
+				hash = window.location.hash.replace('#', ''),
+				index = this._getIndex(id);
+							
+			// push state to history
+			if (hash != id && (index > 0 || hash != '')) 
 			{
 				history.pushState(null, null, window.location.pathname + '#' + id);
 			}
 		},
 		
-		toggle: function(hash) {
+		toggle: function(hash) 
+		{
 			var index;
 			
 			// open first tab on empty hash
-			if (hash == '') {
+			if (hash == '') 
+			{
 				index = 0;
-			} else {
+			} 
+			else 
+			{
 				index = this._getIndex(hash);
 			}
 			
@@ -60,17 +71,21 @@
 		},
 	});
 	
-	$(document).ready(function() {
+	$(document).ready(function() 
+	{
 		var hash = window.location.hash.replace('#', '');
 		
-		if (hash && $('section.ce_tabs div#' + hash).length) {
-			setTimeout(function() {
+		if (hash && $('section.ce_tabs div#' + hash).length) 
+		{
+			setTimeout(function() 
+			{
 				window.scrollTo(0, 0);
 			}, 1);
 		}
 	});
 	
-	$(window).on('hashchange', function() {
+	$(window).on('hashchange', function() 
+	{
 		var hash = window.location.hash.replace('#', '');
 		
 		$('section.ce_tabs').tabs('toggle', hash);
