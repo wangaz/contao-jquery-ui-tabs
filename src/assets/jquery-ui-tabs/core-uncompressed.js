@@ -44,10 +44,8 @@
 				index = this._getIndex(id);
 							
 			// push state to history
-			if (hash != id && (index > 0 || hash != '')) 
-			{
+			if (hash != id && (index > 0 || hash != ''))
 				history.pushState(null, null, window.location.pathname + '#' + id);
-			}
 		},
 		
 		toggle: function(hash) 
@@ -55,19 +53,13 @@
 			var index;
 			
 			// open first tab on empty hash
-			if (hash == '') 
-			{
+			if (hash == '')
 				index = 0;
-			} 
 			else 
-			{
 				index = this._getIndex(hash);
-			}
 			
 			if (index >= 0)
-			{
 				this.option('active', index);
-			}
 		},
 	});
 	
@@ -76,12 +68,10 @@
 		var hash = window.location.hash.replace('#', '');
 		
 		if (hash && $('section.ce_tabs div#' + hash).length) 
-		{
 			setTimeout(function() 
 			{
 				window.scrollTo(0, 0);
 			}, 1);
-		}
 	});
 	
 	$(window).on('hashchange', function() 
