@@ -1,6 +1,6 @@
 
 <div class="<?= $this->class ?> ce_tabs block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style?>"<?php endif; ?>>
-	<ul class="nav invisible"></ul>
+	<ul class="nav invisible"<?php if ($this->juiTabShowDropdown): ?> data-dropdown="<?= specialchars($this->juiTabDropdownLabel) ?>"<?php endif; ?>></ul>
 	<div id="<?= $this->alias ?>" class="panel <?= $this->alias ?>">
 		<<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
 		

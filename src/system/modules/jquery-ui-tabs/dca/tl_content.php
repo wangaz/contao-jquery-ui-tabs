@@ -42,11 +42,19 @@ $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = function($dc)
 /*
  * Palettes
  */
+$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'juiTabShowDropdown';
+ 
 array_insert($GLOBALS['TL_DCA']['tl_content']['palettes'], 0, array(
-	'juiTabStart'		=> '{type_legend},type;{juiTab_legend},juiTabHeadline,juiTabAlias;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+	'juiTabStart'		=> '{type_legend},type;{juiTab_legend},juiTabHeadline,juiTabAlias,juiTabShowDropdown;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
 	'juiTabSeparator'	=> '{type_legend},type;{juiTab_legend},juiTabHeadline,juiTabAlias;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
 	'juiTabStop'		=> '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
 ));
+
+
+/*
+ * Subpalettes
+ */
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['juiTabShowDropdown'] = 'juiTabDropdownLabel';
 
 
 /*
@@ -77,5 +85,19 @@ array_insert($GLOBALS['TL_DCA']['tl_content']['fields'], 0, array(
 			return $varValue;
 		}),
 		'sql'			=> "varchar(128) NOT NULL default ''",
+	),
+	'juiTabShowDropdown' => array(
+		'label'			=> &$GLOBALS['TL_LANG']['tl_content']['juiTabShowDropdown'],
+		'exclude'		=> true,
+		'inputType'		=> 'checkbox',
+		'eval'			=> array('submitOnChange' => true, 'tl_class' => 'w50 m12'),
+		'sql'			=> "char(1) NOT NULL default ''",
+	),
+	'juiTabDropdownLabel' => array(
+		'label'			=> &$GLOBALS['TL_LANG']['tl_content']['juiTabDropdownLabel'],
+		'exclude'		=> true,
+		'inputType'		=> 'text',
+		'eval'			=> array('maxlength' => 256, 'allowHtml' => true, 'mandatory' => true, 'tl_class' => 'w50'),
+		'sql'			=> "varchar(256) NOT NULL default ''",
 	),
 ));

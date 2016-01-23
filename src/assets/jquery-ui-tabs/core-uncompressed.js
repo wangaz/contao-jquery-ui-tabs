@@ -24,7 +24,8 @@
 				var that = $(this);
 				
 				var li = $('<li></li>').appendTo(nav);
-				$('<a></a>', {
+				$('<a></a>', 
+				{
 					href: window.location.pathname + '#' + that.attr('id'),
 					text: that.children('.headline').eq(0).text(),
 				}).appendTo(li);
@@ -33,6 +34,48 @@
 			nav.removeClass('invisible');
 			
 			this._super();
+			
+			// check whether label for dropdown is given
+			var label = nav.data('dropdown');
+			
+			if (label === undefined)
+				return;
+				
+			// evaluate whether dropdown is needed
+			var width = nav.innerWidth() * 0.99;
+			var lis = nav.children('li');
+			
+			lis.each(function(index, element) 
+			{
+				width -= $(element).outerWidth(true);
+			});
+			
+			if (width > 0) 
+				return;
+			
+			// add li for dropdown with given label
+			var dropdown = $('<li></li>',  
+			{
+				class: 'dropdown',
+			}).prependTo(nav);
+			$('<span></span>', 
+			{
+				class: 'link',
+				html: label,
+			}).appendTo(dropdown);
+			$('<ul></ul>').appendTo(dropdown);
+			
+			width -= dropdown.outerWidth(true);
+			
+			// move overflowing li to dropdown
+			for (var i = lis.length - 1; width <= 0 && i >= 0; i--)
+			{
+				var li = lis.eq(i);
+				
+				width += li.outerWidth(true);
+				
+				li.prependTo(dropdown.children('ul').eq(0));
+			}
 		},
 		
 		_toggle: function(event, eventData) 
