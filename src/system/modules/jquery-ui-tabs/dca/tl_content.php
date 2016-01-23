@@ -97,7 +97,7 @@ array_insert($GLOBALS['TL_DCA']['tl_content']['fields'], 0, array(
 		'label'			=> &$GLOBALS['TL_LANG']['tl_content']['juiTabDropdownLabel'],
 		'exclude'		=> true,
 		'inputType'		=> 'text',
-		'eval'			=> array('maxlength' => 256, 'allowHtml' => true, 'mandatory' => true, 'tl_class' => 'w50'),
+		'eval'			=> array('maxlength' => 256, 'allowHtml' => true, 'tl_class' => 'w50'),
 		'sql'			=> "varchar(256) NOT NULL default ''",
 	),
 ));
