@@ -11,7 +11,7 @@ This content element makes the extended [jQuery UI Tabs](https://github.com/jque
 
 ## Demo
 
-https://europawochelauf.de/strecken/brueckenlauf.html
+https://europawochelauf.de/organisatorisches/sieger.html
 
 ##License
 
