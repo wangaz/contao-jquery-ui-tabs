@@ -60,7 +60,6 @@
 			}).prependTo(nav);
 			$('<span></span>', 
 			{
-				class: 'link',
 				html: label,
 			}).appendTo(dropdown);
 			$('<ul></ul>').appendTo(dropdown);
