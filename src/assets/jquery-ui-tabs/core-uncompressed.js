@@ -27,7 +27,7 @@
 				$('<a></a>', 
 				{
 					href: window.location.pathname + '#' + that.attr('id'),
-					text: that.children('.headline').eq(0).text(),
+					html: that.children('.headline').eq(0).html(),
 				}).appendTo(li);
 			});
 			
