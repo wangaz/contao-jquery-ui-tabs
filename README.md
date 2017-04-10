@@ -13,6 +13,6 @@ This content element makes the extended [jQuery UI Tabs](https://github.com/jque
 
 https://europawochelauf.de/organisatorisches/sieger.html
 
-##License
+## License
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
